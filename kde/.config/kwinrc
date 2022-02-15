@@ -1,0 +1,45 @@
+[$Version]
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage,kwin.upd:make-translucency-effect-disabled-by-default,kwin.upd:remove-flip-switch-effect,kwin.upd:remove-cover-switch-effect,kwin.upd:remove-cubeslide-effect,kwin.upd:remove-xrender-backend,kwin.upd:enable-scale-effect-by-default
+
+[Compositing]
+AnimationSpeed[$d]
+OpenGLIsUnsafe=false
+
+[Desktops]
+Id_1=7d5eeaf0-671a-4a4a-beb8-85df1a90abba
+Id_2=c9ecb865-4040-4d29-b937-3e6e1933a5a8
+Id_3=84e7016f-647a-443c-83ea-6c93d7bb0495
+Id_4=b19a32a4-6332-4300-af2e-0c7fec569fd4
+Name_2=New Desktop
+Name_3=New Desktop
+Name_4=New Desktop
+Number=4
+Rows=1
+
+[Effect-PresentWindows]
+BorderActivateAll=9
+
+[Effect-ShowFps]
+TextColor=0,255,255
+TextPosition=2
+
+[NightColor]
+Active=true
+EveningBeginFixed=2200
+Mode=Times
+MorningBeginFixed=0600
+NightTemperature=3800
+
+[Plugins]
+kwin4_effect_squashEnabled=false
+magiclampEnabled=true
+overviewEnabled=true
+wobblywindowsEnabled=true
+
+[TabBox]
+BorderActivate=9
+LayoutName=big_icons
+
+[Windows]
+FocusPolicy=FocusFollowsMouse
+NextFocusPrefersMouse=true

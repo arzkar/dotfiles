@@ -1,0 +1,24 @@
+swipe:
+  3:
+    left:
+      command: "xdotool key alt+Tab" # History forward 
+    right:
+      command: "xdotool key alt+Shift+Tab" # History back
+    up:
+      command: "xdotool key super" # Activity
+    down:
+      command: "xdotool key super" # Activity
+  4:
+    left:
+      command: "xdotool key ctrl+super+Right" # Switch to next workspace
+    right:
+      command: "xdotool key ctrl+super+Left" # Switch to previous workspace
+    up:
+      command: "xdotool key ctrl+F10" # Present all windows
+    down:
+      command: "xdotool key ctrl+F12" # Show Desktop
+pinch:
+  in:
+    command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
+  out:
+    command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out

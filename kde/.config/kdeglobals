@@ -1,0 +1,187 @@
+[$Version]
+update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar,icons_remove_effects.upd:IconsRemoveEffects,kwin.upd:animation-speed,style_widgetstyle_default_breeze.upd:StyleWidgetStyleDefaultBreeze
+
+[ColorEffects:Disabled]
+ChangeSelectionColor=
+Color=56,56,56
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=1
+Enable=
+IntensityAmount=0.1
+IntensityEffect=2
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color=112,111,110
+ColorAmount=-0.9
+ColorEffect=1
+ContrastAmount=0.25
+ContrastEffect=2
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate=224,223,222
+BackgroundNormal=0,0,0
+DecorationFocus=19,255,247
+DecorationHover=19,255,247
+ForegroundActive=19,255,247
+ForegroundInactive=0,0,0
+ForegroundLink=19,255,247
+ForegroundNegative=0,0,0
+ForegroundNeutral=0,0,0
+ForegroundNormal=182,215,221
+ForegroundPositive=0,0,0
+ForegroundVisited=0,0,0
+
+[Colors:Complementary]
+DecorationFocus=19,255,247
+DecorationHover=19,255,247
+ForegroundActive=19,255,247
+ForegroundLink=19,255,247
+
+[Colors:Selection]
+BackgroundAlternate=7,102,98
+BackgroundNormal=7,102,98
+DecorationFocus=19,255,247
+DecorationHover=19,255,247
+ForegroundActive=19,255,247
+ForegroundInactive=190,207,210
+ForegroundLink=19,255,247
+ForegroundNegative=0,0,0
+ForegroundNeutral=0,0,0
+ForegroundNormal=255,255,255
+ForegroundPositive=0,0,0
+ForegroundVisited=0,0,0
+
+[Colors:Tooltip]
+BackgroundAlternate=196,224,255
+BackgroundNormal=190,207,210
+DecorationFocus=19,255,247
+DecorationHover=19,255,247
+ForegroundActive=19,255,247
+ForegroundInactive=0,0,0
+ForegroundLink=19,255,247
+ForegroundNegative=0,0,0
+ForegroundNeutral=0,0,0
+ForegroundNormal=0,0,0
+ForegroundPositive=0,0,0
+ForegroundVisited=0,0,0
+
+[Colors:View]
+BackgroundAlternate=26,33,34
+BackgroundNormal=0,0,0
+DecorationFocus=19,255,247
+DecorationHover=19,255,247
+ForegroundActive=19,255,247
+ForegroundInactive=0,0,0
+ForegroundLink=19,255,247
+ForegroundNegative=0,0,0
+ForegroundNeutral=0,0,0
+ForegroundNormal=190,207,210
+ForegroundPositive=0,0,0
+ForegroundVisited=0,0,0
+
+[Colors:Window]
+BackgroundAlternate=194,208,223
+BackgroundNormal=0,0,0
+DecorationFocus=19,255,247
+DecorationHover=19,255,247
+ForegroundActive=19,255,247
+ForegroundInactive=0,0,0
+ForegroundLink=19,255,247
+ForegroundNegative=0,0,0
+ForegroundNeutral=0,0,0
+ForegroundNormal=190,207,210
+ForegroundPositive=0,0,0
+ForegroundVisited=0,0,0
+
+[DirSelect Dialog]
+DirSelectDialog Size=822,598
+History Items[$e]=file:$HOME/Projects/Personal/Projects/QML,file:///run/media/arbaaz/data/VirtualBox VMs,file:$HOME/VirtualBox VMs,file:///run/media/arbaaz/data/Downloads/Others,file:///run/media/arbaaz/data/Downloads/Torrent
+
+[General]
+AccentColor=19,255,247
+ColorScheme=ReallyDark
+ColorSchemeHash=b1dc22facbf667884fda782e699fa2249d2de26f
+Name=Breeze
+XftHintStyle=hintslight
+XftSubPixel=rgb
+fixed=Hack,11,-1,5,50,0,0,0,0,0
+font=Hack,11,-1,5,50,0,0,0,0,0
+menuFont=Hack,11,-1,5,50,0,0,0,0,0
+shadeSortColumn=true
+smallestReadableFont=Hack,9,-1,5,50,0,0,0,0,0
+toolBarFont=Hack,11,-1,5,50,0,0,0,0,0
+widgetStyle=Breeze
+
+[KDE]
+AnimationDurationFactor=0.500000
+ColorScheme=Breeze
+LookAndFeelPackage=org.kde.breezedark.desktop
+SingleClick=false
+contrast=4
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=2
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Show Bookmarks=false
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort reversed=false
+Speedbar Width=138
+View Style=DetailTree
+
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
+[PreviewSettings]
+MaximumRemoteSize=0
+
+[Shortcuts]
+AboutApp=
+AboutKDE=
+Clear=
+ConfigureNotifications=
+ConfigureToolbars=
+Donate=
+EditBookmarks=
+FitToHeight=
+FitToPage=
+FitToWidth=
+Goto=
+GotoPage=
+KeyBindings=
+Mail=
+OpenRecent=
+PrintPreview=
+ReportBug=
+Revert=
+SaveOptions=
+ShowStatusbar=
+ShowToolbar=
+Spelling=
+SwitchApplicationLanguage=
+TipofDay=
+Zoom=
+
+[WM]
+activeBackground=0,0,0
+activeBlend=255,255,255
+activeFont=Hack,11,-1,5,50,0,0,0,0,0
+activeForeground=255,255,255
+inactiveBackground=224,223,222
+inactiveBlend=75,71,67
+inactiveForeground=75,71,67

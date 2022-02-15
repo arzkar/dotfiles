@@ -1,0 +1,7 @@
+[user]
+	name= arzkar
+	email = arzkar.dev@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	editor = kate
