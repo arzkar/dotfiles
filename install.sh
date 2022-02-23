@@ -28,6 +28,10 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi
 
+# Setup nvim
+# Install vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Installing dotfiles with stow
 rm -rf "$HOME/.p10k.zsh"

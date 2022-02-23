@@ -62,6 +62,10 @@ export PATH="/home/arbaaz/.local/bin:$PATH"
 # cargo(rust)
 source "$HOME/.cargo/env"
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # !! oh-my-zsh config !!
 
 # Path to your oh-my-zsh installation.
