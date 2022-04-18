@@ -26,6 +26,8 @@ TextPosition=2
 [NightColor]
 Active=true
 EveningBeginFixed=2200
+LatitudeAuto=26.1206
+LongitudeAuto=91.6523
 Mode=Times
 MorningBeginFixed=0600
 NightTemperature=3800
@@ -34,7 +36,6 @@ NightTemperature=3800
 kwin4_effect_squashEnabled=false
 magiclampEnabled=true
 overviewEnabled=true
-wobblywindowsEnabled=true
 
 [TabBox]
 BorderActivate=9
@@ -43,3 +44,6 @@ LayoutName=big_icons
 [Windows]
 FocusPolicy=FocusFollowsMouse
 NextFocusPrefersMouse=true
+
+[org.kde.kdecoration2]
+ButtonsOnRight=HFIAX

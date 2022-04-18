@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh/.zsh_history
-HISTSIZE=10000
+HISTSIZE=50000
 SAVEHIST=10000
 bindkey -e
 bindkey '^ ' forward-word
@@ -34,10 +34,13 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 fi
 
 # User specific aliases and functions
-alias epub2mobi-cli=/home/arbaaz/Projects/Scripts/utils/epub2mobi-cli.sh
+alias ebook-convert-helper="pyenv activate ff-yt-dl; ebook-convert-helper"
 alias rsync_kindle=/home/arbaaz/Projects/Scripts/rsync/rsync_kindle.sh
 alias fzf-books=/home/arbaaz/Projects/Scripts/utils/fzf-books.sh
 alias zshconfig="code ~/.zshrc"
+alias zsh-pup="cd ~/.zsh/; /home/arbaaz/Projects/Scripts/git/update_git_repos.sh"
+
+export HOST=localhost
 
 # !! pyenv config !!
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
@@ -82,7 +85,7 @@ ENABLE_CORRECTION="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git docker docker-compose copybuffer copydir dirhistory sudo rust)
+plugins=(git docker docker-compose copybuffer copypath dirhistory sudo rust)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -1,7 +1,5 @@
-[user]
-	name= arzkar
-	email = arzkar.dev@gmail.com
-[init]
-	defaultBranch = main
-[core]
-	editor = kate
+[includeIf "gitdir:~/Projects/Personal/"]
+  path = ~/Projects/Personal/.gitconfig-personal
+
+[includeIf "gitdir:~/Projects/Work/Boldtek/"]
+  path = ~/Projects/Work/Boldtek/.gitconfig-boldtek
