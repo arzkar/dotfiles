@@ -50,7 +50,7 @@ rm -rf "$HOME/.config/kwinrc"
 rm -rf "$HOME/.config/neofetch"
 
 cd $clone_target
-stow kde
+# stow kde # for kde only
 stow libinput-gestures
 stow zsh
 stow git
