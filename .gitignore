@@ -1,2 +1,4 @@
 # ignore nvim plugins
 nvim/.config/nvim/plugged/
+
+.ssh
