@@ -7,13 +7,15 @@ OpenGLIsUnsafe=false
 
 [Desktops]
 Id_1=7d5eeaf0-671a-4a4a-beb8-85df1a90abba
-Id_2=c9ecb865-4040-4d29-b937-3e6e1933a5a8
-Id_3=84e7016f-647a-443c-83ea-6c93d7bb0495
-Id_4=b19a32a4-6332-4300-af2e-0c7fec569fd4
+Id_2=84e7016f-647a-443c-83ea-6c93d7bb0495
+Id_3=b19a32a4-6332-4300-af2e-0c7fec569fd4
+Id_4=9803bb50-5c4f-4086-b76b-6c169d973d15
+Id_5=668f1691-8ebd-4b3b-97f5-8196295ef1ee
 Name_2=New Desktop
 Name_3=New Desktop
-Name_4=New Desktop
-Number=4
+Name_4=Desktop 5
+Name_5=Desktop 6
+Number=5
 Rows=1
 
 [Effect-PresentWindows]
@@ -31,13 +33,15 @@ TextColor=0,255,255
 TextPosition=2
 
 [NightColor]
-Active=true
-EveningBeginFixed=2200
+DayTemperature=3000
+EveningBeginFixed=2300
 LatitudeAuto=26.1206
+LatitudeFixed=25.88
 LongitudeAuto=91.6523
+LongitudeFixed=86.4
 Mode=Times
 MorningBeginFixed=0600
-NightTemperature=3800
+NightTemperature=3000
 
 [Plugins]
 kwin4_effect_squashEnabled=false
@@ -48,9 +52,27 @@ overviewEnabled=true
 BorderActivate=9
 LayoutName=big_icons
 
+[Tiling]
+padding=4
+
+[Tiling][213a9620-187e-58a6-b80b-85d8fb95dfce]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][4656e9c7-29d2-5198-aef7-e64495a298e9]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][e688eb74-7230-5d02-a5e0-3b38a54bc04e]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][fafaa8c8-c87b-5021-ab4b-daef441ce498]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Windows]
 FocusPolicy=FocusFollowsMouse
 NextFocusPrefersMouse=true
+
+[Xwayland]
+Scale=1
 
 [org.kde.kdecoration2]
 ButtonsOnRight=HFIAX

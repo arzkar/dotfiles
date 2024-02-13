@@ -14,7 +14,7 @@ swipe:
     right:
       command: "xdotool key ctrl+super+Left" # Switch to previous workspace
     up:
-      command: "xdotool key ctrl+F10" # Present all windows
+      command: "xdotool key alt+Shift+W" # Toggle overview
     down:
       command: "xdotool key ctrl+F12" # Show Desktop
 pinch:

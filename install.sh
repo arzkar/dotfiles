@@ -11,7 +11,7 @@ if [[ $SHELL != *"zsh" ]]; then
 fi
 
 clone_target="${HOME}/dotfiles"
-git clone https://github.com/arzkar/dotfiles $clone_target
+# git clone https://github.com/arzkar/dotfiles $clone_target
 
 # Install zsh plugins
 if [ ! -d $HOME/.zsh ]; then
@@ -30,8 +30,8 @@ fi
 
 # Setup nvim
 # Install vim-plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+#        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Installing dotfiles with stow
 rm -rf "$HOME/.p10k.zsh"
@@ -50,11 +50,11 @@ rm -rf "$HOME/.config/kwinrc"
 rm -rf "$HOME/.config/neofetch"
 
 cd $clone_target
-# stow kde # for kde only
+stow kde # for kde only
 stow libinput-gestures
 stow zsh
 stow git
 stow p10k
 stow neofetch
-# stow fusuma # if OS uses fusuma for mouse gestures
+stow fusuma # if OS uses fusuma for mouse gestures
 stow gallery-dl

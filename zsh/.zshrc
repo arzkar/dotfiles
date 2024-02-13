@@ -35,8 +35,9 @@ fi
 
 # User specific aliases and functions
 alias ebook-convert-helper="pyenv activate ff-yt-dl; ebook-convert-helper"
+alias rsync_books_android=/home/arbaaz/Projects/Scripts/rsync/rsync_books_android.sh
 alias rsync_kindle=/home/arbaaz/Projects/Scripts/rsync/rsync_kindle.sh
-alias fzf-books=/home/arbaaz/Projects/Scripts/utils/fzf-books.sh
+alias fzf-books=/home/arbaaz/Projects/Scripts/utils/fzf/fzf-books.sh
 alias zshconfig="code ~/.zshrc"
 alias zsh-pup="cd ~/.zsh/; /home/arbaaz/Projects/Scripts/git/update_git_repos.sh"
 
@@ -63,11 +64,11 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="/home/arbaaz/.local/bin:$PATH"
 
 # cargo(rust)
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # !! oh-my-zsh config !!
 
@@ -96,3 +97,9 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-z/zsh-z.plugin.zsh 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# golang
+export GOPATH=$HOME/go
+
+# gem
+# export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"

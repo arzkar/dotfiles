@@ -1,5 +1,10 @@
-[includeIf "gitdir:~/Projects/Personal/"]
-  path = ~/Projects/Personal/.gitconfig-personal
+[user]
+	name = Arbaaz Laskar
+	email = arzkar.dev@gmail.com
+[init]
+	defaultBranch = main
 
-[includeIf "gitdir:~/Projects/Work/Boldtek/"]
-  path = ~/Projects/Work/Boldtek/.gitconfig-boldtek
+[safe]
+	directory = *
+[core]
+	editor = vi

@@ -15,97 +15,134 @@ IntensityEffect=2
 [ColorEffects:Inactive]
 ChangeSelectionColor=true
 Color=112,111,110
-ColorAmount=-0.9
-ColorEffect=1
-ContrastAmount=0.25
+ColorAmount=0.025
+ColorEffect=2
+ContrastAmount=0.1
 ContrastEffect=2
 Enable=false
 IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=224,223,222
-BackgroundNormal=34,31,38
+BackgroundAlternate=116,108,131
+BackgroundNormal=49,54,59
 DecorationFocus=145,132,162
 DecorationHover=145,132,162
 ForegroundActive=145,132,162
-ForegroundInactive=34,31,38
+ForegroundInactive=161,169,177
 ForegroundLink=145,132,162
-ForegroundNegative=34,31,38
-ForegroundNeutral=34,31,38
-ForegroundNormal=182,215,221
-ForegroundPositive=34,31,38
-ForegroundVisited=34,31,38
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
 
 [Colors:Complementary]
+BackgroundAlternate=30,87,116
+BackgroundNormal=42,46,50
 DecorationFocus=145,132,162
 DecorationHover=145,132,162
 ForegroundActive=145,132,162
+ForegroundInactive=161,169,177
 ForegroundLink=145,132,162
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
+
+[Colors:Header]
+BackgroundAlternate=42,46,50
+BackgroundNormal=49,54,59
+DecorationFocus=145,132,162
+DecorationHover=145,132,162
+ForegroundActive=145,132,162
+ForegroundInactive=161,169,177
+ForegroundLink=145,132,162
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
+
+[Colors:Header][Inactive]
+BackgroundAlternate=49,54,59
+BackgroundNormal=42,46,50
+DecorationFocus=61,174,233
+DecorationHover=61,174,233
+ForegroundActive=61,174,233
+ForegroundInactive=161,169,177
+ForegroundLink=29,153,243
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
 
 [Colors:Selection]
-BackgroundAlternate=78,71,87
-BackgroundNormal=78,71,87
+BackgroundAlternate=109,101,123
+BackgroundNormal=109,101,123
 DecorationFocus=145,132,162
 DecorationHover=145,132,162
 ForegroundActive=145,132,162
-ForegroundInactive=190,207,210
+ForegroundInactive=255,255,255
 ForegroundLink=145,132,162
-ForegroundNegative=34,31,38
-ForegroundNeutral=34,31,38
-ForegroundNormal=214,194,239
-ForegroundPositive=34,31,38
-ForegroundVisited=34,31,38
+ForegroundNegative=176,55,69
+ForegroundNeutral=198,92,0
+ForegroundNormal=255,255,255
+ForegroundPositive=23,104,57
+ForegroundVisited=155,89,182
 
 [Colors:Tooltip]
-BackgroundAlternate=196,224,255
-BackgroundNormal=190,207,210
+BackgroundAlternate=42,46,50
+BackgroundNormal=49,54,59
 DecorationFocus=145,132,162
 DecorationHover=145,132,162
 ForegroundActive=145,132,162
-ForegroundInactive=34,31,38
+ForegroundInactive=161,169,177
 ForegroundLink=145,132,162
-ForegroundNegative=34,31,38
-ForegroundNeutral=34,31,38
-ForegroundNormal=34,31,38
-ForegroundPositive=34,31,38
-ForegroundVisited=34,31,38
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
 
 [Colors:View]
-BackgroundAlternate=26,33,34
-BackgroundNormal=34,31,38
+BackgroundAlternate=35,38,41
+BackgroundNormal=27,30,32
 DecorationFocus=145,132,162
 DecorationHover=145,132,162
 ForegroundActive=145,132,162
-ForegroundInactive=34,31,38
+ForegroundInactive=161,169,177
 ForegroundLink=145,132,162
-ForegroundNegative=34,31,38
-ForegroundNeutral=34,31,38
-ForegroundNormal=214,194,239
-ForegroundPositive=34,31,38
-ForegroundVisited=34,31,38
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
 
 [Colors:Window]
-BackgroundAlternate=194,208,223
-BackgroundNormal=34,31,38
+BackgroundAlternate=49,54,59
+BackgroundNormal=42,46,50
 DecorationFocus=145,132,162
 DecorationHover=145,132,162
 ForegroundActive=145,132,162
-ForegroundInactive=34,31,38
+ForegroundInactive=161,169,177
 ForegroundLink=145,132,162
-ForegroundNegative=34,31,38
-ForegroundNeutral=34,31,38
-ForegroundNormal=214,194,239
-ForegroundPositive=34,31,38
-ForegroundVisited=34,31,38
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=822,598
-History Items[$e]=file:$HOME/Projects/Personal/Projects/QML,file:///run/media/arbaaz/data/VirtualBox VMs,file:$HOME/VirtualBox VMs,file:///run/media/arbaaz/data/Downloads/Others,file:///run/media/arbaaz/data/Downloads/Torrent
+DirSelectDialog Size=889,606
+History Items[$e]=file:///Samsung-SSD-Data/Downloads/Others,file:///Samsung-SSD-Data2/SteamLibrary,file:///Samsung-SSD-Data,file:///Samsung-SSD-Data2,file:///SKHynix-Data-SSD/SteamLibrary,file:///SKHynix-Data-SSD,file:$HOME/Apps/Browser Extensions/youtube-enhancer,file:$HOME/Downloads/youtube-enhancer-v1.21.0-Chrome,file:$HOME/Pictures/Screenshots,file:$HOME,file:///Samsung-SSD-Data/Projects,file:$HOME/Pictures,file:///Samsung-SSD-Data/Shared/Pictures/Screenshots,file:///Samsung-SSD-Data/Downloads/Persepolis,file:$HOME/Projects/Personal/Projects/QML,file:///run/media/arbaaz/data/VirtualBox VMs,file:$HOME/VirtualBox VMs,file:///run/media/arbaaz/data/Downloads/Others,file:///run/media/arbaaz/data/Downloads/Torrent
 
 [General]
 AccentColor=145,132,162
-ColorSchemeHash=447380750cc555ea89c3172b29d786ebee078128
+BrowserApplication=brave-browser.desktop
+ColorSchemeHash=01662607e36cd33eacc7d7d7189f69c26b9a2cc8
 Name=Breeze
 XftHintStyle=hintslight
 XftSubPixel=rgb
@@ -125,62 +162,36 @@ SingleClick=false
 contrast=4
 
 [KFileDialog Settings]
-Allow Expansion=false
+Allow Expansion=true
 Automatically select filename extension=true
-Breadcrumb Navigation=true
+Breadcrumb Navigation=false
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Show Bookmarks=false
 Show Full Path=false
-Show Inline Previews=true
+Show Inline Previews=false
 Show Preview=false
 Show Speedbar=true
-Show hidden files=false
+Show hidden files=true
 Sort by=Name
 Sort directories first=true
+Sort hidden files last=false
 Sort reversed=false
-Speedbar Width=138
+Speedbar Width=131
 View Style=DetailTree
 
 [KShortcutsDialog Settings]
-Dialog Size=600,480
+Dialog Size=676,480
 
 [PreviewSettings]
 MaximumRemoteSize=0
 
-[Shortcuts]
-AboutApp=
-AboutKDE=
-Clear=
-ConfigureNotifications=
-ConfigureToolbars=
-Donate=
-EditBookmarks=
-FitToHeight=
-FitToPage=
-FitToWidth=
-Goto=
-GotoPage=
-KeyBindings=
-Mail=
-OpenRecent=
-PrintPreview=
-ReportBug=
-Revert=
-SaveOptions=
-ShowStatusbar=
-ShowToolbar=
-Spelling=
-SwitchApplicationLanguage=
-TipofDay=
-Zoom=
-
 [WM]
-activeBackground=34,31,38
-activeBlend=255,255,255
+activeBackground=49,54,59
+activeBlend=252,252,252
 activeFont=Hack,11,-1,5,50,0,0,0,0,0
-activeForeground=255,255,255
-inactiveBackground=224,223,222
-inactiveBlend=75,71,67
-inactiveForeground=75,71,67
+activeForeground=252,252,252
+inactiveBackground=42,46,50
+inactiveBlend=161,169,177
+inactiveForeground=161,169,177
