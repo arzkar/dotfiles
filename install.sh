@@ -50,11 +50,12 @@ rm -rf "$HOME/.config/kwinrc"
 rm -rf "$HOME/.config/neofetch"
 
 cd $clone_target
-stow kde # for kde only
-stow libinput-gestures
+# stow kde # for kde only
+# stow libinput-gestures
 stow zsh
 stow git
 stow p10k
 stow neofetch
-stow fusuma # if OS uses fusuma for mouse gestures
+# stow fusuma # if OS uses fusuma for mouse gestures
 stow gallery-dl
+stow fanficfare
