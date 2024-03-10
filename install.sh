@@ -1,5 +1,60 @@
 #!/bin/bash
 
+# Check if the script is run as root
+if [ "$EUID" -ne 0 ]
+then
+    echo "Please run this script as root"
+    exit
+fi
+
+# Check if the number of arguments is correct
+if [ "$#" -ne 1 ]
+then
+    echo "Usage: $0 DE<arg1>"
+    exit 1
+fi
+
+arg1=$1
+
+# Function to check if a command is available
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+# Function to check if Git, Stow, and Zsh are installed
+check_dependencies() {
+  local missing=0
+  local missing_deps=()
+
+  if ! command_exists git; then
+    missing_deps+=("git")
+    missing=1
+  fi
+
+  if ! command_exists stow; then
+    missing_deps+=("stow")
+    missing=1
+  fi
+
+  if ! command_exists zsh; then
+    missing_deps+=("zsh")
+    missing=1
+  fi
+
+  if [ $missing -eq 1 ]; then
+    echo "The following dependencies are missing: ${missing_deps[*]}"
+  fi
+
+  return $missing
+}
+
+# Check dependencies
+if ! check_dependencies; then
+  exit 1
+fi
+
+# Common stuff
+# Change shell to zsh
 if [[ $SHELL != *"zsh" ]]; then
     if [[ -f "$(which zsh)" ]]; 
     then
@@ -10,8 +65,9 @@ if [[ $SHELL != *"zsh" ]]; then
     fi
 fi
 
+# clone dotfiles repo
 clone_target="${HOME}/dotfiles"
-# git clone https://github.com/arzkar/dotfiles $clone_target
+git clone https://github.com/arzkar/dotfiles $clone_target
 
 # Install zsh plugins
 if [ ! -d $HOME/.zsh ]; then
@@ -19,7 +75,6 @@ if [ ! -d $HOME/.zsh ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh/zsh-syntax-highlighting
     git clone https://github.com/agkozak/zsh-z $HOME/.zsh/zsh-z
 fi
-
 
 # Setup omz
 if [ ! -d $HOME/.oh-my-zsh ]; then
@@ -33,29 +88,43 @@ fi
 # sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 #        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# Installing dotfiles with stow
+# Remove existing configs
 rm -rf "$HOME/.p10k.zsh"
 rm -rf "$HOME/.gitconfig"
 rm -rf "$HOME/.zshrc"
 rm -rf "$HOME/.zshenv"
-
-rm -rf "$HOME/.config/libinput-gestures.conf"
-
-# KDE configs
-rm -rf "$HOME/.local/share/color-schemes/"
-rm -rf "$HOME/.config/kdeglobals"
-rm -rf "$HOME/.config/kglobalshortcutsrc"
-rm -rf "$HOME/.config/kwinrc"
-
 rm -rf "$HOME/.config/neofetch"
 
+# Stow common files
 cd $clone_target
-# stow kde # for kde only
-# stow libinput-gestures
 stow zsh
 stow git
 stow p10k
-stow neofetch
-# stow fusuma # if OS uses fusuma for mouse gestures
 stow gallery-dl
 stow fanficfare
+stow neofetch
+
+
+# Use arg1 and arg2 for different actions
+echo "Syncing configs for $arg1"
+if [ "$arg1" == "kde" ]
+then
+    rm -rf "$HOME/.local/share/color-schemes/"
+    rm -rf "$HOME/.config/kdeglobals"
+    rm -rf "$HOME/.config/kglobalshortcutsrc"
+    rm -rf "$HOME/.config/kwinrc"
+    rm -rf "$HOME/.config/libinput-gestures.conf"
+
+    stow kde
+    stow libinput-gestures
+    stow fusuma
+elif [ "$arg1" == "i3" ]
+then
+    rm -rf "$HOME/.config/i3"
+    rm -rf "$HOME/.config/polybar"
+    stow i3
+    stow polybar
+else
+    echo "Invalid argument: $arg1"
+    exit 1
+fi
