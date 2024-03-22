@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Check if the script is run as root
-if [ "$EUID" -ne 0 ]
-then
-    echo "Please run this script as root"
-    exit
-fi
+# if [ "$EUID" -ne 0 ]
+# then
+#     echo "Please run this script as root"
+#     exit
+# fi
 
 # Check if the number of arguments is correct
 if [ "$#" -ne 1 ]
@@ -124,6 +124,7 @@ then
     rm -rf "$HOME/.config/polybar"
     stow i3
     stow polybar
+    stow xinput
 else
     echo "Invalid argument: $arg1"
     exit 1

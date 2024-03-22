@@ -51,7 +51,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+t  exec kitty
+bindsym $mod+Shift+t exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -68,7 +68,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun -font \\"DejaVu 9\\" -run-s
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # launch polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id polybar &
 
 # change focus
 bindsym $mod+j focus left
