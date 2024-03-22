@@ -157,10 +157,8 @@ screenchange-reload = true
 pseudo-transparency = true
 
 [module/battery]
-type = custom/script
-exec = acpi -b | awk '{print $4}' | tr -d ','
-interval = 30
-label = %output%
+type = internal/battery
+battery = BAT0
 
 [module/power_draw]
 type = custom/script
