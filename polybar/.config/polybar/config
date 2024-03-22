@@ -51,7 +51,7 @@ separator-foreground = ${colors.disabled}
 font-0 = monospace;2
 
 modules-left = xworkspaces xwindow
-modules-right = filesystem pulseaudio xkeyboard memory cpu date battery
+modules-right = power_draw pulseaudio xkeyboard memory cpu date battery
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -161,5 +161,11 @@ type = custom/script
 exec = acpi -b | awk '{print $4}' | tr -d ','
 interval = 30
 label = %output%
+
+[module/power_draw]
+type = custom/script
+exec = $HOME/dotfiles/scripts/power_draw.sh
+interval = 5
+format-prefix = ""
 
 ; vim:ft=dosini
