@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/bin/sh -c "sleep 10 && /bin/bash -c '[[ -f $HOME/.xprofile ]] && . $HOME/.xprofile'"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=RunXProfile
+Name=RunXProfile
+Comment[en_US]=Run .xprofile script at startup
+Comment=Run .xprofile script at startup

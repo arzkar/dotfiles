@@ -125,6 +125,7 @@ then
     stow i3
     stow polybar
     stow xinput
+    stow autostart
 else
     echo "Invalid argument: $arg1"
     exit 1
