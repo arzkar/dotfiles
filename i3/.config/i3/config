@@ -67,8 +67,8 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun -font \\"DejaVu 9\\" -run-s
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# launch polybar
-exec_always --no-startup-id polybar &
+# Launch Polybar if it's not already running
+exec --no-startup-id pgrep -x polybar || $HOME/.config/polybar/launch.sh
 
 # change focus
 bindsym $mod+j focus left
