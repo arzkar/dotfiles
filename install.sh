@@ -127,6 +127,7 @@ then
     stow xinput
     stow autostart
     stow gtk
+    stow xfce
 else
     echo "Invalid argument: $arg1"
     exit 1
