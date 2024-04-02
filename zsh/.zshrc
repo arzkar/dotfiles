@@ -35,11 +35,10 @@ fi
 
 # User specific aliases and functions
 alias ebook-convert-helper="pyenv activate ff-yt-dl; ebook-convert-helper"
-alias rsync_books_android=/home/arbaaz/Projects/Scripts/rsync/rsync_books_android.sh
-alias rsync_kindle=/home/arbaaz/Projects/Scripts/rsync/rsync_kindle.sh
-alias fzf-books=/home/arbaaz/Projects/Scripts/utils/fzf/fzf-books.sh
+alias rsync_books_android=/media/Data/Projects/Scripts/rsync/rsync_books_android.sh
+alias rsync_kindle=/media/Data//Projects/Scripts/rsync/rsync_kindle.sh
+alias fzf-books=/media/Data/Projects/Scripts/utils/fzf/fzf-books.sh
 alias zshconfig="code ~/.zshrc"
-alias zsh-pup="cd ~/.zsh/; /home/arbaaz/Projects/Scripts/git/update_git_repos.sh"
 
 export HOST=localhost
 
@@ -100,6 +99,7 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # golang
 export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
 
 # gem
 # export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
