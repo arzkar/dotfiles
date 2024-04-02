@@ -126,6 +126,7 @@ then
     stow polybar
     stow xinput
     stow autostart
+    stow gtk
 else
     echo "Invalid argument: $arg1"
     exit 1
