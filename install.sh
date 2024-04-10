@@ -88,6 +88,13 @@ fi
 # sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 #        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+setup_systemd_services () {
+  sudo chmod 644 ${HOME}/dotfiles/systemd-services/lock.service
+  sudo ln -s ${HOME}/dotfiles/systemd-services/lock.service /etc/systemd/system/lock.service
+  sudo systemctl daemon-reload
+  sudo systemctl start lock.service
+}
+
 # Remove existing configs
 rm -rf "$HOME/.p10k.zsh"
 rm -rf "$HOME/.gitconfig"
@@ -128,6 +135,7 @@ then
     stow autostart
     stow gtk
     stow xfce
+    setup_systemd_services
 else
     echo "Invalid argument: $arg1"
     exit 1

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/bin/sh -c "sleep 10 && /bin/bash -c '[[ -f $HOME/.xprofile ]] && . $HOME/.xprofile'"
+Exec=/bin/sh -c "sleep 10 && /bin/bash -c '. $HOME/.xprofile'"
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

@@ -29,7 +29,8 @@ exec --no-startup-id xfsettingsd
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i "$HOME/Pictures/Wallpapers/Fandom/Stormlight Archive/WoK-wallpaper-2560x1600.png"
+#! Replaced by xautolock & systemd service
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i "$HOME/Pictures/Wallpapers/Fandom/Stormlight Archive/WoK-wallpaper-2560x1600.png"
 
 # Set the wallpaper
 exec --no-startup-id feh --bg-scale "$HOME/Pictures/Wallpapers/Fandom/Stormlight Archive/WoK-wallpaper-2560x1600.jpg"
@@ -58,6 +59,12 @@ bindsym $mod+Shift+t exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# scratchpad
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+# Convert the currently focused floating window to tiling
+bindsym $mod+Shift+equal floating toggle
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'"

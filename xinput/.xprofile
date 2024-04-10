@@ -1,1 +1,6 @@
+# if external mouse connected
+#       trackpad=11 
+# else 
+#       trackpad=12
 xinput set-prop 11 "libinput Tapping Enabled" 1
+xinput set-prop 12 "libinput Tapping Enabled" 1 
