@@ -29,8 +29,8 @@ exec --no-startup-id xfsettingsd
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-#! Replaced by xautolock & systemd service
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i "$HOME/Pictures/Wallpapers/Fandom/Stormlight Archive/WoK-wallpaper-2560x1600.png"
+#! using xidlehook script for locking
+exec_always /home/arbaaz/dotfiles/scripts/xidlehook.sh
 
 # Set the wallpaper
 exec --no-startup-id feh --bg-scale "$HOME/Pictures/Wallpapers/Fandom/Stormlight Archive/WoK-wallpaper-2560x1600.jpg"

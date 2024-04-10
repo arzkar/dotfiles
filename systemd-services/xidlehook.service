@@ -1,0 +1,12 @@
+[Unit]
+Description=Automatic Screen Locker
+
+[Service]
+Type=simple
+User=arbaaz
+Environment=DISPLAY=:0
+Environment=XIDLEHOOK_SOCK=%t/xidlehook.socket
+ExecStart=/home/arbaaz/dotfiles/scripts/xidlehook.sh
+
+[Install]
+WantedBy=graphical.target

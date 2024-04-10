@@ -89,10 +89,15 @@ fi
 #        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 setup_systemd_services () {
+  # sudo chmod 644 ${HOME}/dotfiles/systemd-services/xidlehook.service
   sudo chmod 644 ${HOME}/dotfiles/systemd-services/lock.service
+
+  # sudo ln -s ${HOME}/dotfiles/systemd-services/xidlehook.service /etc/systemd/system/xidlehook.service
   sudo ln -s ${HOME}/dotfiles/systemd-services/lock.service /etc/systemd/system/lock.service
+
   sudo systemctl daemon-reload
-  sudo systemctl start lock.service
+  # sudo systemctl start xidlehook
+  sudo systemctl start lock
 }
 
 # Remove existing configs
@@ -135,7 +140,7 @@ then
     stow autostart
     stow gtk
     stow xfce
-    setup_systemd_services
+    # setup_systemd_services
 else
     echo "Invalid argument: $arg1"
     exit 1
