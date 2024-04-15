@@ -90,14 +90,16 @@ fi
 
 setup_systemd_services () {
   # sudo chmod 644 ${HOME}/dotfiles/systemd-services/xidlehook.service
-  sudo chmod 644 ${HOME}/dotfiles/systemd-services/lock.service
+  sudo chmod 644 ${HOME}/dotfiles/systemd-services/lid-monitor.service
+  sudo chmod 644 ${HOME}/dotfiles/systemd-services/lid-monitor.path
 
   # sudo ln -s ${HOME}/dotfiles/systemd-services/xidlehook.service /etc/systemd/system/xidlehook.service
-  sudo ln -s ${HOME}/dotfiles/systemd-services/lock.service /etc/systemd/system/lock.service
+  sudo ln -s ${HOME}/dotfiles/systemd-services/lid-monitor.service /etc/systemd/system/lid-monitor.service
+  sudo ln -s ${HOME}/dotfiles/systemd-services/lid-monitor.path /etc/systemd/system/lid-monitor.path
 
   sudo systemctl daemon-reload
   # sudo systemctl start xidlehook
-  sudo systemctl start lock
+  sudo systemctl start lid-monitor
 }
 
 # Remove existing configs

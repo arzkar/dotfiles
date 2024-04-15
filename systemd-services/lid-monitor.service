@@ -1,0 +1,11 @@
+[Unit]
+Description=Lock screen when lid is closed
+After=sleep.target
+
+[Service]
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStart=/home/arbaaz/dotfiles/scripts/lock_screen_on_lid_close.sh
+
+[Install]
+WantedBy=sleep.target
