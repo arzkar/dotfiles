@@ -15,7 +15,6 @@
 ;   The README contains a lot of information
 ;
 ;==========================================================
-
 [colors]
 background = #282A2E
 background-alt = #373B41
@@ -29,8 +28,6 @@ disabled = #707880
 width = 100%
 height = 24pt
 radius = 6
-
-; dpi = 96
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -51,18 +48,12 @@ separator-foreground = ${colors.disabled}
 font-0 = monospace;2
 
 modules-left = xworkspaces xwindow
-modules-right = temperature power_draw pulseaudio xkeyboard memory cpu date battery
+modules-right = temperature power_draw pulseaudio xkeyboard memory cpu date battery battery-estimate
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 enable-ipc = true
-
-; wm-restack = generic
-; wm-restack = bspwm
-; wm-restack = i3
-
-; override-redirect = true
 
 [module/systray]
 type = internal/tray
@@ -159,6 +150,15 @@ pseudo-transparency = true
 [module/battery]
 type = internal/battery
 battery = BAT0
+label = %{A1:acpi -b | awk '{print $5}':}BAT0%{A}
+
+[module/battery-estimate]
+type = custom/script
+exec = $HOME/dotfiles/scripts/battery_estimate.sh
+interval = 2
+format-prefix = "Estimate: "
+format-prefix-foreground = ${colors.primary}
+label = %output%
 
 [module/power_draw]
 type = custom/script
