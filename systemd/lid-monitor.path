@@ -5,4 +5,4 @@ Description=Monitor lid state
 PathChanged=/proc/acpi/button/lid/LID/state
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=sleep.target

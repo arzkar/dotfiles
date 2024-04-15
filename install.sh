@@ -88,19 +88,14 @@ fi
 # sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 #        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-setup_systemd_services () {
-  # sudo chmod 644 ${HOME}/dotfiles/systemd-services/xidlehook.service
-  sudo chmod 644 ${HOME}/dotfiles/systemd-services/lid-monitor.service
-  sudo chmod 644 ${HOME}/dotfiles/systemd-services/lid-monitor.path
-
-  # sudo ln -s ${HOME}/dotfiles/systemd-services/xidlehook.service /etc/systemd/system/xidlehook.service
-  sudo ln -s ${HOME}/dotfiles/systemd-services/lid-monitor.service /etc/systemd/system/lid-monitor.service
-  sudo ln -s ${HOME}/dotfiles/systemd-services/lid-monitor.path /etc/systemd/system/lid-monitor.path
+setup_systemd () {
+  sudo chmod 644 ${HOME}/dotfiles/systemd/i3lock-fancy.service
+  sudo ln -s ${HOME}/dotfiles/systemd/i3lock-fancy.service /etc/systemd/system/i3lock-fancy.service
 
   sudo systemctl daemon-reload
-  # sudo systemctl start xidlehook
-  sudo systemctl start lid-monitor
+  sudo systemctl enable i3lock-fancy
 }
+
 
 # Remove existing configs
 rm -rf "$HOME/.p10k.zsh"
@@ -142,7 +137,7 @@ then
     stow autostart
     stow gtk
     stow xfce
-    # setup_systemd_services
+    # setup_systemd
 else
     echo "Invalid argument: $arg1"
     exit 1

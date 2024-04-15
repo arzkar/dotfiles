@@ -1,0 +1,13 @@
+[Unit]
+Description=i3lock-fancy on suspend
+Before=sleep.target
+
+[Service]
+User=arbaaz
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=i3lock-fancy
+ExecStartPost=/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target
