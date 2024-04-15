@@ -11,7 +11,11 @@ toggle_battery_display() {
 }
 
 get_battery_percentage() {
-    acpi -b | awk '{print $4}' | tr -d ','
+    bat_percentage=$(acpi -b | awk '{print $4}' | tr -d ',')
+    if [ "$bat_percentage" == "charging" ]; then
+        bat_percentage=$(acpi -b | awk '{print $5}' | tr -d ',')
+    fi
+    echo "$bat_percentage"
 }
 
 get_battery_estimate() {
