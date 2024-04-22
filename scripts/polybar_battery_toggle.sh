@@ -11,18 +11,16 @@ toggle_battery_display() {
 }
 
 get_battery_percentage() {
-    bat_percentage=$(acpi -b | awk '{print $4}' | tr -d ',')
-    if [ "$bat_percentage" == "charging" ]; then
-        bat_percentage=$(acpi -b | awk '{print $5}' | tr -d ',')
-    fi
-    echo "$bat_percentage"
+    percentage=$(acpi -b | head -n 1 | awk -F ', ' '{print $2}')
+    echo "$percentage"
 }
 
 get_battery_estimate() {
-    status=$(acpi -b | awk '{print $3}' | tr -d ',')
-    if [ "$status" == "Discharging" ] || [ "$status" == "Charging" ]; then
-        estimate=$(acpi -b | awk '{print $5}' | awk -F ':' '{sub(/^0/, "", $1); print $1"h:"$2"m"}')
-        echo "$estimate"
+    estimate=$(acpi -b | head -n 1 | awk -F ', ' '{print $3}' | sed 's/ remaining//')
+    if [ -n "$estimate" ]; then
+        hours=$(echo $estimate | awk -F ':' '{print $1}')
+        minutes=$(echo $estimate | awk -F ':' '{print $2}')
+        echo "${hours}h:${minutes}m"
     else
         echo "N/A"
     fi
