@@ -96,6 +96,9 @@ setup_systemd () {
   sudo systemctl enable i3lock-fancy
 }
 
+# qbittorrent theme
+mkdir $HOME/apps
+git clone https://github.com/maboroshin/qBittorrentDarktheme.git $HOME/apps/qBittorrentDarktheme
 
 # Remove existing configs
 rm -rf "$HOME/.p10k.zsh"

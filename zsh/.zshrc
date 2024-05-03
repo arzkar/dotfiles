@@ -104,3 +104,6 @@ export PATH="$GOPATH/bin:$PATH"
 # gem
 # export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# adb
+export PATH="$HOME/apps/adb-fastboot:$PATH"
