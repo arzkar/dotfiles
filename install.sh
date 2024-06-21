@@ -96,6 +96,14 @@ setup_systemd () {
   sudo systemctl enable i3lock-fancy
 }
 
+
+setup_i3_apps () {
+  mkdir $HOME/apps
+  git clone https://github.com/meskarune/i3lock-fancy.git  $HOME/apps/i3lock-fancy
+  cd $HOME/apps/i3lock-fancy
+  sudo make install
+}
+
 # qbittorrent theme
 mkdir $HOME/apps
 git clone https://github.com/maboroshin/qBittorrentDarktheme.git $HOME/apps/qBittorrentDarktheme
