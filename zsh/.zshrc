@@ -18,7 +18,7 @@ setopt appendhistory
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/arbaaz/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 # zstyle ':completion:*' menu select
 
 autoload -Uz compinit
@@ -60,7 +60,7 @@ eval "$(pyenv virtualenv-init -)"
 
 
 # python
-export PATH="/home/arbaaz/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # cargo(rust)
 # source "$HOME/.cargo/env"
@@ -72,7 +72,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # !! oh-my-zsh config !!
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/arbaaz/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # robbyrussell, classyTouch, spaceship, trapd00r, 
 ZSH_THEME="powerlevel10k/powerlevel10k"
