@@ -28,14 +28,14 @@ exec --no-startup-id xfsettingsd
 # they are included here as an example. Modify as you see fit.
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-# exec_always xss-lock -- /home/arbaaz/dotfiles/scripts/xidlehook-lid-close.sh
-# exec_always --no-startup-id xss-lock -- /home/arbaaz/dotfiles/scripts/xidlehook.sh
+# exec_always xss-lock --  $HOME/dotfiles/scripts/xidlehook-lid-close.sh
+# exec_always --no-startup-id xss-lock --  $HOME/dotfiles/scripts/xidlehook.sh
 #! using xidlehook script for locking on idle
-exec /home/arbaaz/dotfiles/scripts/xidlehook.sh
+exec $HOME/dotfiles/scripts/xidlehook.sh
 bindsym $mod+Ctrl+l exec i3lock-fancy
 
 # Set the wallpaper
-exec --no-startup-id feh --bg-scale "$HOME/Pictures/Wallpapers/Fandom/Stormlight Archive/WoK-wallpaper-2560x1600.jpg"
+exec --no-startup-id feh --bg-scale "$HOME/Pictures/WoK-branded-wallpaper-1920x1200.jpg"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
