@@ -102,11 +102,16 @@ setup_i3_apps () {
   git clone https://github.com/meskarune/i3lock-fancy.git  $HOME/apps/i3lock-fancy
   cd $HOME/apps/i3lock-fancy
   sudo make install
+  
+setup_battery_notify () {
+  git clone https://github.com/rjekker/i3-battery-popup.git  $HOME/apps/
+
 }
 
 # qbittorrent theme
 mkdir $HOME/apps
 git clone https://github.com/maboroshin/qBittorrentDarktheme.git $HOME/apps/qBittorrentDarktheme
+
 
 # Remove existing configs
 rm -rf "$HOME/.p10k.zsh"
@@ -148,6 +153,7 @@ then
     stow autostart
     stow gtk
     stow xfce
+    setup_battery_notify
     # setup_systemd
 else
     echo "Invalid argument: $arg1"

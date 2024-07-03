@@ -107,3 +107,6 @@ export PATH="$GOPATH/bin:$PATH"
 
 # adb
 export PATH="$HOME/apps/adb-fastboot:$PATH"
+
+# i3-battery-popup
+export PATH="$HOME/apps/i3-battery-popup:$PATH"
