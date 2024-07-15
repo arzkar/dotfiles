@@ -104,7 +104,7 @@ setup_i3_apps () {
   sudo make install
   
 setup_battery_notify () {
-  git clone https://github.com/rjekker/i3-battery-popup.git  $HOME/apps/
+  git clone https://github.com/rjekker/i3-battery-popup.git  $HOME/apps/i3-battery-popup
 
 }
 
