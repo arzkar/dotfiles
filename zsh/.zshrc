@@ -110,3 +110,6 @@ export PATH="$HOME/apps/adb-fastboot:$PATH"
 
 # i3-battery-popup
 export PATH="$HOME/apps/i3-battery-popup:$PATH"
+
+# clang
+export LIBCLANG_PATH=/usr/lib64
