@@ -39,6 +39,9 @@ alias rsync_books_android=/media/Data/Projects/Scripts/rsync/rsync_books_android
 alias rsync_kindle=/media/Data//Projects/Scripts/rsync/rsync_kindle.sh
 alias fzf-books=/media/Data/Projects/Scripts/utils/fzf/fzf-books.sh
 alias zshconfig="code ~/.zshrc"
+alias ssh_last_pulse="ssh ubuntu@13.200.168.135 -i ~/.ssh/last_pulse_arbaaz"
+alias ssh_pointo_ec2="ssh ubuntu@13.235.198.184 -i ~/.ssh/pointo"
+alias ssh_pointo_test_ec2="ssh root@13.126.235.243 -i ~/.ssh/pointo"
 
 export HOST=localhost
 
