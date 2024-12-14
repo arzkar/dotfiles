@@ -39,9 +39,11 @@ alias rsync_books_android=/media/Data/Projects/Scripts/rsync/rsync_books_android
 alias rsync_kindle=/media/Data//Projects/Scripts/rsync/rsync_kindle.sh
 alias fzf-books=/media/Data/Projects/Scripts/utils/fzf/fzf-books.sh
 alias zshconfig="code ~/.zshrc"
-alias ssh_last_pulse="ssh ubuntu@13.200.168.135 -i ~/.ssh/last_pulse_arbaaz"
+alias ssh_last_pulse_backend="ssh ubuntu@13.200.168.135 -i ~/.ssh/last_pulse_arbaaz"
+alias ssh_last_pulse_frontend="ssh ubuntu@43.205.175.82 -i ~/.ssh/last_pulse_arbaaz"
 alias ssh_pointo_ec2="ssh ubuntu@13.235.198.184 -i ~/.ssh/pointo"
 alias ssh_pointo_test_ec2="ssh root@13.126.235.243 -i ~/.ssh/pointo"
+alias cursor='/home/arbaaz/apps/cursor.AppImage "$PWD" &'
 
 export HOST=localhost
 
@@ -64,6 +66,8 @@ eval "$(pyenv virtualenv-init -)"
 
 # python
 export PATH="$HOME/.local/bin:$PATH"
+
+export PATH="/usr/local/bin/:$PATH"
 
 # cargo(rust)
 source "$HOME/.cargo/env"
@@ -116,3 +120,10 @@ export PATH="$HOME/apps/i3-battery-popup:$PATH"
 
 # clang
 export LIBCLANG_PATH=/usr/lib64
+export PATH=$PATH:/home/arbaaz/.spicetify
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/arbaaz/apps/google-cloud-sdk/path.zsh.inc' ]; then . '/home/arbaaz/apps/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/arbaaz/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/arbaaz/apps/google-cloud-sdk/completion.zsh.inc'; fi

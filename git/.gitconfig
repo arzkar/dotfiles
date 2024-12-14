@@ -8,3 +8,5 @@
 	directory = *
 [core]
 	editor = vi
+[push]
+	autoSetupRemote = true

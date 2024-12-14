@@ -63,7 +63,10 @@ bindsym $mod+Shift+t exec kitty
 bindsym $mod+Shift+Return exec "kitty -d `xcwd`"
 
 # i3 battery alert
-exec --no-startup-id i3-battery-popup -n -t 1s -L 20% -I 1%
+exec --no-startup-id i3-battery-popup -n -t 1m -L 20% -I 1%
+
+# picom init
+exec_always --no-startup-id picom -b
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -87,6 +90,8 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun -font \\"DejaVu 9\\" -run-s
 
 # Launch Polybar if it's not already running
 exec --no-startup-id pgrep -x polybar || $HOME/.config/polybar/launch.sh
+
+exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 
 # change focus
 bindsym $mod+j focus left
