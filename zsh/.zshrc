@@ -43,6 +43,9 @@ alias ssh_pointo_ec2="ssh -i ~/.ssh/pointo ubuntu@13.235.198.184"
 alias ssh_pointo_test_ec2="ssh -i ~/.ssh/pointo root@13.126.235.243"
 alias ssh_pointo_iot_ec2="ssh -i ~/.ssh/pointo ubuntu@15.206.178.115"
 alias ssh_gitlab_runner_ec2="ssh -i ~/.ssh/pointo root@3.6.155.231"
+alias ssh_last_pulse_backend="ssh ubuntu@13.200.168.135 -i ~/.ssh/last_pulse_arbaaz"
+alias ssh_last_pulse_frontend="ssh ubuntu@43.205.175.82 -i ~/.ssh/last_pulse_arbaaz"
+alias cursor='/home/arbaaz/apps/cursor.AppImage "$PWD" &'
 
 export HOST=localhost
 
@@ -65,6 +68,8 @@ eval "$(pyenv virtualenv-init -)"
 
 # python
 export PATH="$HOME/.local/bin:$PATH"
+
+export PATH="/usr/local/bin/:$PATH"
 
 # cargo(rust)
 source "$HOME/.cargo/env"
@@ -122,3 +127,12 @@ export PATH=$PATH:$JAVA_HOME/bin
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
+# clang
+export LIBCLANG_PATH=/usr/lib64
+export PATH=$PATH:/home/arbaaz/.spicetify
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/arbaaz/apps/google-cloud-sdk/path.zsh.inc' ]; then . '/home/arbaaz/apps/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/arbaaz/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/arbaaz/apps/google-cloud-sdk/completion.zsh.inc'; fi
