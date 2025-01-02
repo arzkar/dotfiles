@@ -39,6 +39,10 @@ alias rsync_books_android=/media/Data/Projects/Scripts/rsync/rsync_books_android
 alias rsync_kindle=/media/Data//Projects/Scripts/rsync/rsync_kindle.sh
 alias fzf-books=/media/Data/Projects/Scripts/utils/fzf/fzf-books.sh
 alias zshconfig="code ~/.zshrc"
+alias ssh_pointo_ec2="ssh -i ~/.ssh/pointo ubuntu@13.235.198.184"
+alias ssh_pointo_test_ec2="ssh -i ~/.ssh/pointo root@13.126.235.243"
+alias ssh_pointo_iot_ec2="ssh -i ~/.ssh/pointo ubuntu@15.206.178.115"
+alias ssh_gitlab_runner_ec2="ssh -i ~/.ssh/pointo root@3.6.155.231"
 
 export HOST=localhost
 
@@ -110,3 +114,11 @@ export PATH="$HOME/apps/adb-fastboot:$PATH"
 
 # i3-battery-popup
 export PATH="$HOME/apps/i3-battery-popup:$PATH"
+
+# java
+export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
+export PATH=$PATH:$JAVA_HOME/bin
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi

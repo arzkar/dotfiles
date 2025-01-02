@@ -7,4 +7,6 @@
 [safe]
 	directory = *
 [core]
-	editor = vi
+	editor = nvim
+[push]
+	default = current
