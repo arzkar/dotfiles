@@ -46,6 +46,9 @@ alias ssh_gitlab_runner_ec2="ssh -i ~/.ssh/pointo root@3.6.155.231"
 alias ssh_pointo_jenkins_ec2="ssh -i ~/.ssh/pointo ubuntu@13.233.98.180"
 alias ssh_last_pulse_backend="ssh ubuntu@13.200.168.135 -i ~/.ssh/last_pulse_arbaaz"
 alias ssh_last_pulse_frontend="ssh ubuntu@43.205.175.82 -i ~/.ssh/last_pulse_arbaaz"
+alias ssh_pointo_ec2="ssh ubuntu@13.235.198.184 -i ~/.ssh/pointo"
+alias ssh_pointo_test_ec2="ssh root@13.126.235.243 -i ~/.ssh/pointo"
+alias ssh_pointo_iot_ec2="ssh -i ~/.ssh/pointo ubuntu@43.204.214.167"
 alias cursor='/home/arbaaz/apps/cursor.AppImage "$PWD" &'
 
 export HOST=localhost
@@ -84,7 +87,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# robbyrussell, classyTouch, spaceship, trapd00r, 
+# robbyrussell, classyTouch, spaceship, trapd00r,
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to enable command auto-correction.
@@ -103,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # zsh plugins
-source ~/.zsh/zsh-z/zsh-z.plugin.zsh 
+source ~/.zsh/zsh-z/zsh-z.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

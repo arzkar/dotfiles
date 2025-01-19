@@ -56,7 +56,7 @@ fi
 # Common stuff
 # Change shell to zsh
 if [[ $SHELL != *"zsh" ]]; then
-    if [[ -f "$(which zsh)" ]]; 
+    if [[ -f "$(which zsh)" ]];
     then
         echo "Changing shell to zsh, please insert your password"
         chsh -s /usr/bin/zsh
@@ -96,13 +96,18 @@ setup_systemd () {
   sudo systemctl enable i3lock-fancy
 }
 
+setup_cursor () {
+  stow desktop
+  update-desktop-database ~/.local/share/applications
+}
+
 
 setup_i3_apps () {
   mkdir $HOME/apps
   git clone https://github.com/meskarune/i3lock-fancy.git  $HOME/apps/i3lock-fancy
   cd $HOME/apps/i3lock-fancy
   sudo make install
-  
+
 setup_battery_notify () {
   git clone https://github.com/rjekker/i3-battery-popup.git  $HOME/apps/i3-battery-popup
 
@@ -159,3 +164,5 @@ else
     echo "Invalid argument: $arg1"
     exit 1
 fi
+
+setup_cursor

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Cursor
+Exec=/home/arbaaz/apps/cursor.AppImage
+Type=Application
+Categories=Development;
+Terminal=false
+Comment=IDE by Cursor
