@@ -42,13 +42,14 @@ alias zshconfig="code ~/.zshrc"
 alias ssh_pointo_ec2="ssh -i ~/.ssh/pointo ubuntu@13.235.198.184"
 alias ssh_pointo_test_ec2="ssh -i ~/.ssh/pointo root@13.126.235.243"
 alias ssh_pointo_iot_ec2="ssh -i ~/.ssh/pointo ubuntu@43.204.214.167"
+alias ssh_pointo_iot_staging_v2_ec2="ssh -i ~/.ssh/pointo ubuntu@98.130.81.98"
+alias ssh_pointo_iot_staging_db="ssh -i ~/.ssh/pointo ubuntu@40.192.54.142"
 alias ssh_gitlab_runner_ec2="ssh -i ~/.ssh/pointo root@3.6.155.231"
 alias ssh_pointo_jenkins_ec2="ssh -i ~/.ssh/pointo ubuntu@13.233.98.180"
+alias ssh_pointo_pilot_prod_ec2="ssh -i ~/.ssh/pointo ubuntu@18.61.69.194"
+alias ssh_pointo_pilot_test_ec2="ssh -i ~/.ssh/pointo ubuntu@18.60.216.235"
 alias ssh_last_pulse_backend="ssh ubuntu@13.200.168.135 -i ~/.ssh/last_pulse_arbaaz"
 alias ssh_last_pulse_frontend="ssh ubuntu@43.205.175.82 -i ~/.ssh/last_pulse_arbaaz"
-alias ssh_pointo_ec2="ssh ubuntu@13.235.198.184 -i ~/.ssh/pointo"
-alias ssh_pointo_test_ec2="ssh root@13.126.235.243 -i ~/.ssh/pointo"
-alias ssh_pointo_iot_ec2="ssh -i ~/.ssh/pointo ubuntu@43.204.214.167"
 alias cursor='/home/arbaaz/apps/cursor.AppImage "$PWD" &'
 
 export HOST=localhost

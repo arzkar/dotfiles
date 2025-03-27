@@ -65,9 +65,15 @@ if [[ $SHELL != *"zsh" ]]; then
     fi
 fi
 
+
 # clone dotfiles repo
 clone_target="${HOME}/dotfiles"
-git clone https://github.com/arzkar/dotfiles $clone_target
+if [ ! -d "$clone_target" ]; then
+    git clone https://github.com/arzkar/dotfiles $clone_target
+else
+    echo "Dotfiles directory already exists at $clone_target"
+    echo "Using existing directory..."
+fi
 
 # Install zsh plugins
 if [ ! -d $HOME/.zsh ]; then
@@ -88,6 +94,129 @@ fi
 # sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 #        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+# Add this function to setup PPAs and dependencies
+setup_dependencies() {
+    # Add polybar PPA
+    sudo add-apt-repository ppa:kgilmer/speed-ricer -y
+
+    # Update package lists
+    sudo apt update
+
+    # Install polybar, picom and other dependencies
+    sudo apt install -y \
+        polybar \
+        picom \
+        cmake \
+        cmake-data \
+        pkg-config \
+        python3-sphinx \
+        python3-packaging \
+        libuv1-dev \
+        libcairo2-dev \
+        libxcb1-dev \
+        libxcb-util0-dev \
+        libxcb-randr0-dev \
+        libxcb-composite0-dev \
+        python3-xcbgen \
+        xcb-proto \
+        libxcb-image0-dev \
+        libxcb-ewmh-dev \
+        libxcb-icccm4-dev \
+        libxcb-xkb-dev \
+        libxcb-xrm-dev \
+        libxcb-cursor-dev \
+        libasound2-dev \
+        libpulse-dev \
+        libjsoncpp-dev \
+        libmpdclient-dev \
+        libcurl4-openssl-dev \
+        libnl-genl-3-dev
+}
+
+# Fix the qBittorrent theme installation
+setup_qbittorrent_theme() {
+    if [ -d "$HOME/apps/qBittorrentDarktheme" ]; then
+        echo "Removing existing qBittorrent theme directory..."
+        rm -rf "$HOME/apps/qBittorrentDarktheme"
+    fi
+    
+    mkdir -p "$HOME/apps"
+    git clone https://github.com/maboroshin/qBittorrentDarktheme.git "$HOME/apps/qBittorrentDarktheme"
+}
+
+# First define the setup_i3 function
+setup_i3 () {
+    # Install dependencies first
+    setup_dependencies
+
+    # Check if i3 is installed
+    if ! command -v i3 &> /dev/null; then
+        echo "Installing i3..."
+        sudo apt install i3 i3-wm i3status i3lock
+    fi
+
+    # Check and install XFCE components
+    if ! command -v xfce4-session &> /dev/null; then
+        echo "Installing XFCE..."
+        sudo apt install xfce4 xfce4-goodies
+    fi
+
+    # Check and install Polybar
+    if ! command -v polybar &> /dev/null; then
+        echo "Installing Polybar and dependencies..."
+        sudo apt install \
+            polybar \
+            cmake \
+            cmake-data \
+            pkg-config \
+            python3-sphinx \
+            python3-packaging \
+            libuv1-dev \
+            libcairo2-dev \
+            libxcb1-dev \
+            libxcb-util0-dev \
+            libxcb-randr0-dev \
+            libxcb-composite0-dev \
+            python3-xcbgen \
+            xcb-proto \
+            libxcb-image0-dev \
+            libxcb-ewmh-dev \
+            libxcb-icccm4-dev \
+            libxcb-xkb-dev \
+            libxcb-xrm-dev \
+            libxcb-cursor-dev \
+            libasound2-dev \
+            libpulse-dev \
+            libjsoncpp-dev \
+            libmpdclient-dev \
+            libcurl4-openssl-dev \
+            libnl-genl-3-dev
+    fi
+
+    # Additional i3 utilities from your config
+    sudo apt install \
+        i3lock-fancy \
+        rofi \
+        dunst \
+        picom \
+        feh \
+        arandr \
+        xbacklight \
+        network-manager-gnome \
+        pasystray \
+        xclip \
+        maim \
+        xdotool \
+        xss-lock
+
+    # Verify installations
+    echo "Checking installations..."
+    echo "i3 version: $(i3 --version)"
+    echo "XFCE version: $(xfce4-session --version)"
+    echo "Polybar version: $(polybar --version)"
+}
+
+# Then define other functions
 setup_systemd () {
   sudo chmod 644 ${HOME}/dotfiles/systemd/i3lock-fancy.service
   sudo ln -s ${HOME}/dotfiles/systemd/i3lock-fancy.service /etc/systemd/system/i3lock-fancy.service
@@ -101,16 +230,19 @@ setup_cursor () {
   update-desktop-database ~/.local/share/applications
 }
 
-
 setup_i3_apps () {
   mkdir $HOME/apps
-  git clone https://github.com/meskarune/i3lock-fancy.git  $HOME/apps/i3lock-fancy
-  cd $HOME/apps/i3lock-fancy
-  sudo make install
+  if [ ! -d $HOME/apps/i3lock-fancy ]; then
+    git clone https://github.com/meskarune/i3lock-fancy.git  $HOME/apps/i3lock-fancy
+    cd $HOME/apps/i3lock-fancy
+    sudo make install
+  fi
+}
 
 setup_battery_notify () {
-  git clone https://github.com/rjekker/i3-battery-popup.git  $HOME/apps/i3-battery-popup
-
+  if [ ! -d $HOME/apps/i3-battery-popup ]; then
+    git clone https://github.com/rjekker/i3-battery-popup.git  $HOME/apps/i3-battery-popup
+  fi
 }
 
 # qbittorrent theme
@@ -133,12 +265,12 @@ stow p10k
 stow gallery-dl
 stow fanficfare
 stow neofetch
-
+setup_cursor
 
 # Use arg1 and arg2 for different actions
 echo "Syncing configs for $arg1"
 if [ "$arg1" == "kde" ]
-then
+then``
     rm -rf "$HOME/.local/share/color-schemes/"
     rm -rf "$HOME/.config/kdeglobals"
     rm -rf "$HOME/.config/kglobalshortcutsrc"
@@ -150,6 +282,8 @@ then
     stow fusuma
 elif [ "$arg1" == "i3" ]
 then
+    setup_i3
+    setup_qbittorrent_theme
     rm -rf "$HOME/.config/i3"
     rm -rf "$HOME/.config/polybar"
     stow i3
@@ -164,5 +298,3 @@ else
     echo "Invalid argument: $arg1"
     exit 1
 fi
-
-setup_cursor
